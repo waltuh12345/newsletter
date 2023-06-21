@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Notifications page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css" integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="dist/main.css">
+</head>
+<body>
+  
+  <main>
+
+    <div class="container">
+      <picture>
+        <source media="(min-width: 675px )" srcset="assets/images/illustration-sign-up-desktop.svg">
+        <img src="assets/images/illustration-sign-up-mobile.svg" alt="illustration-sign-up">
+      </picture>
+
+      <aside>
+        <h1>Stay updated!</h1>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+        <ul></ul>
+
+        <form action="/" method="get">
+          <div class="box">
+
+            <div class="label-wrapper">
+              <label for="email">Email address</label>
+              <span>error</span>
+            </div>
+            <input type="email" name="email" id="email" placeholder="email@company.com">
+
+          </div>
+
+          <button type="submit">Subscribe to monthly newsletter</button>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/aniFunc.js"></script>
+</body>
+</html>

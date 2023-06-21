@@ -1,0 +1,37 @@
+@use 'variables' as *;
+@use 'config' as *;
+@use 'style' as *;
+
+.container.success {
+  max-width: initial;
+  width: min(90%,350px);
+  padding: initial;
+  display: initial;
+  border-radius: 8px;
+  // padding: 2rem 2.5rem;
+}
+.success-message {
+  animation: fadeIn;
+  animation-duration: 1s;
+  padding: 2rem;
+  > span {
+    @include icon($fa-var-check-circle,26px,after);
+    color: $clr-primary;
+  }
+
+  h1 {
+    margin-top: 1rem;
+    line-height: 1;
+  }
+
+  p {
+    margin-bottom: 2rem;
+  }
+
+  button {
+    @extend %form-box;
+    background-color: map-get($clr-neutral, 400 );
+    color: map-get($clr-neutral, 100 );
+    font-weight: $bold;
+  }
+}

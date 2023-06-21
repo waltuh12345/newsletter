@@ -1,0 +1,126 @@
+//====COLORS=====//
+
+$clr-primary: hsl(4, 100%, 67%);
+
+$clr-neutral: (
+  100: hsl(0, 0%, 100%),
+  200: hsl(231, 7%, 60%),
+  300: hsl(235, 18%, 26%),
+  400: hsl(234, 29%, 20%)
+);
+
+
+//=======FONTS=======//
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$ff: 'Roboto', sans-serif;
+
+$regular: 400;
+$bold: 700;
+
+
+//====MIXIN=====//
+
+@mixin bg-gradient($clr1,$clr2) {
+  background: linear-gradient(to bottom, $clr1 0%, $clr2 100%);
+}
+
+@mixin get-color($clr, $key) {
+  color: map-get($clr, $key );
+}
+
+@mixin get-bg($clr, $key) {
+  background-color: map-get($clr, $key );
+}
+
+@mixin ff-title($fw: $medium) {
+  font-family: $ff-title;
+  font-weight: $fw;
+}
+@mixin ff($fw: $semi-bold) {
+  font-family: $ff;
+  font-weight: $fw;
+}
+
+@mixin icon($content, $fs,$pseudo) {
+  &::#{$pseudo} {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: "#{$content}";
+    font: var(--fa-font-solid);
+    font-size: $fs;
+  }
+}
+
+@mixin container($min1,$min2) {
+  width: min($min1,$min2);
+  margin-inline: auto;
+}
+
+@mixin flex($fd,$gap) {
+  display: flex;
+  flex-direction: $fd;
+  gap: $gap;
+}
+
+@mixin grid($gap) {
+  display: grid;
+  gap: $gap;
+}
+
+@mixin hover($property,$map,$key) {
+  @media (hover: hover) and (pointer: fine) {
+    transition: .6s;
+
+    &:hover {
+      #{$property}: map-get($map, $key );
+    }
+  }
+}
+
+
+//====STYLES=====//
+
+//! OPTIONAL
+:root {
+  font-size: 62.5%;
+}
+
+$window-fs: 16px;
+$mobile-fs: 16px;
+
+$desktop-heading: 3.1rem;// window * 1.96;
+$desktop-subheading: 2.6rem;// smaller than heading;
+$mobile-heading: 2.1rem;// 1.3 * mobile fs;
+$mobile-subheading: 1.8rem; // smaller than mobile heading;
+
+body {
+  font-size: $window-fs;
+  font-family: $ff;
+  font-weight: $regular;
+
+  h1 {
+    font-size: $desktop-heading;
+    font-weight: $bold;
+  }
+  
+  h2 {
+    font-size: $desktop-subheading;
+  }
+  
+  @media only screen and (max-width: 400px) {
+    body {
+      font-size: $mobile-fs; //! optional 16 or 14
+    }
+  
+    h1 {
+      font-size: $mobile-heading;
+    }
+  
+    h2 {
+      font-size: $mobile-subheading;
+    }
+  }
+}
